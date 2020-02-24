@@ -1,8 +1,9 @@
 
 //check if we are running in the development environment or the production environment
-if (process.env.NODE_ENV !== 'production') {
+
+//if (process.env.NODE_ENV !== 'production') {
     require('dotenv').config() //load all contents from .env file into application
-} 
+//}// 
 
 const express = require('express')
 
@@ -32,7 +33,7 @@ app.use(express.static('public'))
 const mongoose = require('mongoose')
 
 //setup connection to database
-mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true })
+mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true, useUnifiedTopology: true })
 
 //log if we are connected to our database 
 const db = mongoose.connection
