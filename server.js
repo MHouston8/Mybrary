@@ -1,9 +1,9 @@
 
 //check if we are running in the development environment or the production environment
 
-if (process.env.NODE_ENV !== 'production') {
-    require('dotenv').config() //load all contents from .env file into application
-} 
+//if (process.env.NODE_ENV !== 'production') {
+    require('dotenv').config({ path: '.env' }) //load all contents from .env file into application
+//} 
 
 const express = require('express')
 
